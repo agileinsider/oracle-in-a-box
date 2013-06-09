@@ -5,8 +5,6 @@ date > /etc/vagrant_box_build_time
 mkdir /media/cdrom
 mount /dev/cdrom /media/cdrom
 
-yum --disablerepo=\* --enablerepo=c6-media -y install gcc make gcc-c++ ruby kernel-devel-`uname -r` zlib-devel openssl-devel readline-devel sqlite-devel perl unzip
-
 cat > /etc/yum.repos.d/puppetlabs.repo << EOM
 [puppetlabs]
 name=puppetlabs
@@ -31,12 +29,12 @@ enabled=1
 gpgcheck=0
 EOM
 
-yum --enablerepo=c6-media -y install puppet facter ruby-devel rubygems ansible
+yum --enablerepo=c6-media -y install gcc make gcc-c++ kernel-devel-`uname -r` zlib-devel openssl-devel readline-devel sqlite-devel perl wget dkms nfs-utils
+yum --enablerepo=c6-media -y install puppet facter ruby-devel rubygems
+gem install --no-ri --no-rdoc chef
 yum -y erase gtk2 libX11 hicolor-icon-theme avahi freetype bitstream-vera-fonts
 yum -y clean all
 rm /etc/yum.repos.d/{puppetlabs,puppetlabs-deps,epel}.repo
-
-gem install --no-ri --no-rdoc chef
 
 # Installing vagrant keys
 mkdir /home/vagrant/.ssh

@@ -1,9 +1,12 @@
 *.gem
 *.rbc
+*.box
 .bundle
 .config
+.vagrant
 coverage
 iso/*.iso
+downloads/*.zip
 InstalledFiles
 lib/bundler/man
 pkg

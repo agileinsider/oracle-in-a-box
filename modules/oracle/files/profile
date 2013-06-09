@@ -1,0 +1,12 @@
+# .profile
+# File Managed by Puppet
+
+umask 022
+export ORACLE_BASE=/app/oracle/local
+export ORACLE_HOME=/app/oracle/local/product/11.2.0.1.0/db_in_box
+export PATH=$PATH:$ORACLE_HOME/bin
+export ORACLE_SID=ORCL
+
+export LC_ALL=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+export LANGUAGE=en_GB.UTF-8

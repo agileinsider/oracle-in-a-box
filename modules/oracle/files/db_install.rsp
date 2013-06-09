@@ -1,0 +1,98 @@
+####################################################################
+## Copyright(c) Oracle Corporation 1998,2008. All rights reserved.##
+##                                                                ##
+## Specify values for the variables listed below to customize     ##
+## your installation.                                             ##
+##                                                                ##
+## Each variable is associated with a comment. The comment        ##
+## can help to populate the variables with the appropriate        ##
+## values.							  ##
+##                                                                ##
+## IMPORTANT NOTE: This file contains plain text passwords and    ##
+## should be secured to have read permission only by oracle user  ##
+## or db administrator who owns this installation.                ##
+##                                                                ##
+####################################################################
+
+#------------------------------------------------------------------------------
+# Do not change the following system generated value. 
+#------------------------------------------------------------------------------
+oracle.install.responseFileVersion=/oracle/install/rspfmt_dbinstall_response_schema_v11_2_0
+oracle.install.option=INSTALL_DB_SWONLY
+
+ORACLE_HOSTNAME=oracle-vm
+UNIX_GROUP_NAME=oinstall
+INVENTORY_LOCATION=/app/oracle/local/inventory
+SELECTED_LANGUAGES=en,en_GB
+ORACLE_HOME=/app/oracle/local/product/11.2.0.1.0/db_in_box
+ORACLE_BASE=/app/oracle/local
+
+oracle.install.db.InstallEdition=EE
+oracle.install.db.isCustomInstall=true
+oracle.install.db.customComponents=oracle.server:11.2.0.1.0,oracle.sysman.ccr:10.2.7.0.0,oracle.xdk:11.2.0.1.0,oracle.rdbms.oci:11.2.0.1.0,oracle.network:11.2.0.1.0,oracle.network.listener:11.2.0.1.0,oracle.rdbms:11.2.0.1.0,oracle.options:11.2.0.1.0,oracle.rdbms.partitioning:11.2.0.1.0
+oracle.install.db.DBA_GROUP=dba
+oracle.install.db.OPER_GROUP=oinstall
+oracle.install.db.CLUSTER_NODES=
+
+#------------------------------------------------------------------------------
+# Specify the type of database to create.
+# It can be one of the following:
+# - GENERAL_PURPOSE/TRANSACTION_PROCESSING          
+# - DATA_WAREHOUSE                                
+#------------------------------------------------------------------------------
+oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
+oracle.install.db.config.starterdb.globalDBName=oracle.in.a.box
+oracle.install.db.config.starterdb.SID=ORCL
+oracle.install.db.config.starterdb.characterSet=AL32UTF8
+oracle.install.db.config.starterdb.memoryOption=true
+oracle.install.db.config.starterdb.memoryLimit=2048
+oracle.install.db.config.starterdb.installExampleSchemas=false
+oracle.install.db.config.starterdb.enableSecuritySettings=true
+
+#------------------------------------------------------------------------------
+# This variable holds the password that is to be used for all schemas in the
+# starter database.
+#-------------------------------------------------------------------------------
+oracle.install.db.config.starterdb.password.ALL=password
+oracle.install.db.config.starterdb.password.SYS=password
+oracle.install.db.config.starterdb.password.SYSTEM=password
+oracle.install.db.config.starterdb.password.SYSMAN=password
+oracle.install.db.config.starterdb.password.DBSNMP=password
+
+oracle.install.db.config.starterdb.control=DB_CONTROL
+oracle.install.db.config.starterdb.gridcontrol.gridControlServiceURL=
+oracle.install.db.config.starterdb.dbcontrol.enableEmailNotification=false
+oracle.install.db.config.starterdb.dbcontrol.emailAddress=root@localhost
+oracle.install.db.config.starterdb.dbcontrol.SMTPServer=localhost
+
+
+###############################################################################
+#                                                                             #
+# SPECIFY BACKUP AND RECOVERY OPTIONS                                 	      #
+# ------------------------------------		                              #
+# Out-of-box backup and recovery options for the database can be mentioned    #
+# using the entries below.						      #	
+#                                                                             #
+###############################################################################
+
+oracle.install.db.config.starterdb.automatedBackup.enable=false
+oracle.install.db.config.starterdb.automatedBackup.osuid=
+oracle.install.db.config.starterdb.automatedBackup.ospwd=
+
+oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE
+oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=/app/oracle/data
+oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=
+
+oracle.install.db.config.asm.diskGroup=
+oracle.install.db.config.asm.ASMSNMPPassword=
+
+MYORACLESUPPORT_USERNAME=user@acme.org
+MYORACLESUPPORT_PASSWORD=password
+
+SECURITY_UPDATES_VIA_MYORACLESUPPORT=false
+DECLINE_SECURITY_UPDATES=true
+
+PROXY_HOST=
+PROXY_PORT=
+PROXY_USER=
+PROXY_PWD=
