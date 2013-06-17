@@ -25,19 +25,22 @@ Steps
  - You can skip the veewee build by issuing `vagrant box add centos-6.4 http://share.agile.ly/centos-6.4.box`
 3. Using Vagrant, start an instance of the basebox which will install oracle (using puppet)
  - `vagrant up`
-4. Export the box and create new instance
- - `vagrant export --output oracle-vm.box`
- - `vagrant box add oracle-vm oracle-vm.box`
- - `vagrant destroy`
-5. Try your shiny new oracle box
- - `mkdir instance`
- - `vagrant init oracle-vm`
- - `vagrant up`
-6. Login to the box and check oracle install
+4. Login to the box and check oracle install
  - `vagrant ssh`
  - `sudo -i`
  - `su - oracle`
  - `sqlplus sys/password as sysdba`
+
+You can if you want export this as a box to save the time required to install oracle ;)
+1. Export the box and create new instance
+ - `vagrant export --output oracle-vm.box`
+ - `vagrant box add oracle-vm oracle-vm.box`
+ - `vagrant destroy`
+2. Try your shiny new oracle box
+ - `mkdir instance`
+ - `cd instance`
+ - `vagrant init oracle-vm`
+ - `vagrant up`
 
 I would publish the prebuilt oracle-vm.box, but since I had to agree to the OTN restrictions to get the oracle installers I would be violating the agreement by doing so.
 
