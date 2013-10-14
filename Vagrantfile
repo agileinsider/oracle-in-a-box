@@ -1,14 +1,17 @@
-Vagrant::Config.run do |config|
+Vagrant.configure("2") do |config|
   config.vm.box = "centos-6.4"
-  config.vm.boot_mode = :gui
 
-  config.vm.customize ["modifyvm", :id,
-                       "--name", 'oracle-vm',
-                       "--memory", "4096",
-                       "--cpus", "2"]
-  config.vm.host_name = 'oracle-vm.in.a.box'
+  config.vm.provider "virtualbox" do |v|
+    v.gui = true
+    v.customize ["modifyvm", :id,
+                 "--name", 'oracle-vm',
+                 "--memory", "4096",
+                 "--cpus", "2"]
+  end
 
-  config.vm.share_folder("installers", "/tmp/downloads", "downloads")
+  config.vm.hostname = 'oracle-vm.in.a.box'
+
+  config.vm.synced_folder "downloads", "/tmp/downloads"
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
